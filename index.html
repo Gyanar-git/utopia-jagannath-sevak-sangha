@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ratha Yatra 2025 - Sponsorship Opportunities Infographic</title>
+    <title>Utopia Jagannath Sevak Sangha - Official Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
@@ -11,7 +11,8 @@
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F9FAFB;
-            background-image: url('https://content-fetcher.googleusercontent.com/uploaded:Screenshot%202025-05-29%20at%208.18.15%E2%80%AFAM.png-b16a0c4d-ebb7-422f-84ee-c09c6bc7c34c');
+            /* IMPORTANT: Ensure 'center-watermark.jpeg' matches the exact filename in your GitHub repo (case-sensitive) */
+            background-image: url('center-watermark.jpeg');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: 40%;
@@ -44,6 +45,24 @@
                 font-size: 2.5rem;
                 transform: rotate(-15deg);
             }
+        }
+        .corner-logo {
+            position: fixed;
+            z-index: 55; /* Higher than nav to ensure visibility */
+            width: 80px;
+            height: auto;
+            transition: transform 0.3s ease-in-out;
+        }
+        .corner-logo:hover {
+            transform: scale(1.05);
+        }
+        .corner-logo.top-left {
+            top: 15px;
+            left: 15px;
+        }
+        .corner-logo.bottom-right {
+            bottom: 15px;
+            right: 15px;
         }
         .brand-gradient-text {
             background: linear-gradient(to right, #EF4444, #F59E0B);
@@ -142,109 +161,202 @@
             background-color: #EF4444;
             color: white;
         }
+        .highlight-animation {
+            animation: pulse-bg 2s ease-in-out forwards;
+        }
+        @keyframes pulse-bg {
+            0% { background-color: white; }
+            50% { background-color: #FFD166; /* Bright Yellow from original palette */ }
+            100% { background-color: white; }
+        }
+        /* Page specific styles */
+        .page-section {
+            display: none; /* Hidden by default */
+            padding-top: 4rem; /* Adjust for sticky nav */
+            padding-bottom: 4rem;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .home-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding-top: 6rem; /* Adjust for fixed corner logos */
+            padding-bottom: 4rem;
+        }
+        .home-hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+        }
+        .home-hero p {
+            font-size: 1.25rem;
+        }
+        @media (min-width: 768px) {
+            .home-hero h1 {
+                font-size: 5rem;
+            }
+        }
+        /* Image Carousel Styles */
+        .image-carousel {
+            position: relative;
+            width: 100%;
+            max-width: 700px; /* Adjust max width as needed */
+            height: 400px; /* Fixed height for consistency */
+            margin: 3rem auto;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .image-carousel img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the container */
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out; /* Fade transition */
+        }
+        .image-carousel img.active {
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="text-gray-800">
 
     <div class="text-watermark">Utopia Jagannath Sevak Sangha</div>
 
-    <nav id="navbar" class="sticky-nav hidden md:block">
-        <div class="container mx-auto px-6 py-2 flex justify-center space-x-2">
-            <a href="#hero" class="nav-link">Home</a>
-            <a href="#about-event" class="nav-link">About</a>
-            <a href="#why-sponsor" class="nav-link">Why Sponsor?</a>
-            <a href="#sponsorship-tiers" class="nav-link">Tiers</a>
-            <a href="#visualized-benefits" class="nav-link">Benefits</a>
-            <a href="#cta" class="nav-link">Connect</a>
+    <img src="top-left-corner.jpeg" alt="Utopia Jagannath Sevak Sangha Logo" class="corner-logo top-left">
+    <img src="bottom-right.jpeg" alt="Jagannath Sevak Sangha" class="corner-logo bottom-right">
+
+    <nav id="navbar" class="sticky-nav">
+        <div class="container mx-auto px-6 py-2 flex justify-center space-x-2 md:space-x-4">
+            <button class="nav-link" onclick="window.showPage('home-page', this)">Home</button>
+            <button class="nav-link" onclick="window.showPage('about-us-page', this)">About Us</button>
+            <button class="nav-link" onclick="window.showPage('events-page', this)">Events</button>
+            <button class="nav-link" onclick="window.showPage('sponsorship-page', this)">Sponsorship</button>
+            <button class="nav-link" onclick="window.showPage('contact-us-page', this)">Contact Us</button>
         </div>
     </nav>
 
-    <section id="hero" class="py-16 md:py-24 text-center bg-gradient-to-br from-red-50 to-amber-50">
+    <section id="home-page" class="page-section active text-center bg-gradient-to-br from-red-50 to-amber-50 home-hero">
         <div class="container mx-auto px-6">
-            <img src="https://content-fetcher.googleusercontent.com/uploaded:Screenshot%202025-05-29%20at%207.49.29%E2%80%AFAM.png-882681d3-7bc9-42e6-9e50-99ca9ea33952" alt="Utopia Jagannath Sevak Sangha Logo" class="mx-auto w-32 md:w-40 h-auto mb-6">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                Partner with <span class="brand-gradient-text">Ratha Yatra 2025</span>
+            <h1 class="font-bold mb-6 brand-gradient-text">
+                Utopia Jagannath Sevak Sangha
             </h1>
-            <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
-                Amplify your brand's reach and connect with a vibrant, engaged community. Discover unparalleled sponsorship opportunities at Brigade Utopia's most cherished cultural celebration.
+            <p class="text-gray-700 mb-8 max-w-4xl mx-auto">
+                Dedicated to fostering spiritual growth, cultural preservation, and community harmony through the worship and celebration of Lord Jagannath. We are the custodians of devotion in Brigade Utopia.
             </p>
-            <a href="#sponsorship-tiers" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
-                Explore Sponsorship Tiers
-            </a>
-            <div class="mt-12">
-                <img src="https://content-fetcher.googleusercontent.com/uploaded:Screenshot%202025-05-29%20at%207.49.18%E2%80%AFAM.jpg-eae40052-8306-4ce0-acef-5957b253476a" alt="Ratha Yatra Celebration" class="w-full md:w-3/4 lg:w-2/3 mx-auto rounded-lg shadow-lg">
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button onclick="window.showPage('about-us-page')" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                    Learn More About Us
+                </button>
+                <button onclick="window.showPage('sponsorship-page')" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                    Sponsor Ratha Yatra 2025
+                </button>
             </div>
+
+            <div class="image-carousel">
+                <img src="Thakura.jpg" alt="Lord Jagannath Deities" class="active">
+                <img src="Rath-1.jpg" alt="Decorated Ratha Chariot 1">
+                <img src="Rath-2.jpeg" alt="Decorated Ratha Chariot 2">
+            </div>
+            <p class="text-sm text-gray-600 mt-4">Witness the divine beauty of our celebrations through these glimpses of past events.</p>
         </div>
     </section>
 
-    <section id="about-event" class="py-16 text-center">
+    <section id="about-us-page" class="page-section text-center bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">A Divine Journey, A Grand Celebration</h2>
+            <h2 class="section-title">About Utopia Jagannath Sevak Sangha</h2>
             <p class="section-subtitle">
-                The Jagannatha Ratha Yatra is a profoundly significant Hindu festival, celebrated with immense fervor worldwide. At Brigade Utopia, we are honored to host this nine-day sacred event, bringing together our community in devotion and joyous procession as the revered deities Jagannath, Balabhadra, and Subhadra embark on their ceremonial journey.
+                Our trust is a beacon of spiritual and cultural enrichment within Brigade Utopia. We are committed to preserving and promoting the rich traditions associated with Lord Jagannath.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
                 <div class="card text-left">
-                    <h3 class="text-2xl font-bold mb-3 text-red-600">Event Highlights</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center"><span class="icon-placeholder">🗓️</span> Nine-day grand festival</li>
-                        <li class="flex items-center"><span class="icon-placeholder">🙏</span> Sacred Ratha pulling ceremony</li>
-                        <li class="flex items-center"><span class="icon-placeholder">🕉️</span> Daily worship & rituals</li>
-                        <li class="flex items-center"><span class="icon-placeholder">🎉</span> Vibrant cultural programs</li>
-                        <li class="flex items-center"><span class="icon-placeholder">🎶</span> Resonant chants and devotional music</li>
+                    <h3 class="text-2xl font-bold mb-3 text-red-600">Our Mission</h3>
+                    <p class="text-gray-700">
+                        To serve Lord Jagannath and His devotees by organizing sacred festivals, cultural events, and community-building initiatives that foster devotion, unity, and spiritual understanding among residents.
+                    </p>
+                </div>
+                <div class="card text-left">
+                    <h3 class="text-2xl font-bold mb-3 text-amber-600">Our Vision</h3>
+                    <p class="text-gray-700">
+                        To create a vibrant spiritual hub in Brigade Utopia, where the timeless teachings of Sanatana Dharma flourish, inspiring individuals to lead purposeful lives rooted in compassion and service.
+                    </p>
+                </div>
+                <div class="card md:col-span-2 text-left">
+                    <h3 class="text-2xl font-bold mb-3 text-emerald-600">Our Values</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>**Devotion (Bhakti):** Cultivating sincere love and surrender to the Divine.</li>
+                        <li>**Community (Sangha):** Fostering a supportive and inclusive environment for all.</li>
+                        <li>**Service (Seva):** Engaging in selfless acts for the welfare of society.</li>
+                        <li>**Tradition (Sanskriti):** Preserving and celebrating our rich cultural heritage.</li>
+                        <li>**Harmony (Samarasya):** Promoting peace and understanding among all individuals.</li>
                     </ul>
                 </div>
-                <div class="card text-center">
-                    <h3 class="text-2xl font-bold mb-4 text-red-600">Unprecedented Community Reach</h3>
-                    <p class="stat-big-number">2500+</p>
-                    <p class="text-xl text-gray-700 font-semibold">Homes Engaged</p>
-                    <p class="text-gray-600 mt-2">Directly connect with thousands of residents within Brigade Utopia and visiting devotees from beyond.</p>
-                </div>
-            </div>
-            <div class="mt-12">
-                <img src="https://content-fetcher.googleusercontent.com/uploaded:Screenshot%202025-05-29%20at%207.49.39%E2%80%AFAM.png-4cb80809-e820-43a0-9c7b-6ff718783892" alt="Utopia Jagannath Sevak Sangha" class="w-full md:w-1/2 lg:w-1/3 mx-auto rounded-lg shadow-lg">
             </div>
         </div>
     </section>
 
-    <section id="why-sponsor" class="py-16 bg-gray-100 text-center">
+    <section id="events-page" class="page-section text-center">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Unlock Powerful Advantages</h2>
+            <h2 class="section-title">Our Events & Celebrations</h2>
             <p class="section-subtitle">
-                Sponsoring Ratha Yatra 2025 offers exceptional value, aligning your brand with a deeply respected cultural event and providing a unique platform to achieve your marketing objectives.
+                We organize a variety of spiritual and cultural events throughout the year, with the annual Ratha Yatra being our flagship celebration.
             </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-5xl text-amber-500">👁️</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-amber-600">Boost Brand Visibility</h3>
-                    <p class="text-gray-600">Gain prominent exposure to a large, captive audience through extensive on-ground and digital promotions associated with the event.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card text-left">
+                    <h3 class="text-2xl font-bold mb-3 text-red-600">Annual Ratha Yatra</h3>
+                    <p class="text-gray-700 mb-4">
+                        Our most significant event, the Jagannatha Ratha Yatra, draws thousands of devotees and community members. It's a nine-day festival filled with sacred rituals, cultural performances, and the joyous pulling of the chariots.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Grand Chariot Procession</li>
+                        <li>Daily Pujas and Bhajans</li>
+                        <li>Cultural Programs & Kirtans</li>
+                        <li>Prasad Distribution</li>
+                        <li>Community Feast</li>
+                    </ul>
+                    <button onclick="window.showPage('sponsorship-page')" class="mt-6 bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300">
+                        Learn About Ratha Yatra Sponsorship
+                    </button>
                 </div>
-                <div class="card">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-5xl text-emerald-500">🤝</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-emerald-600">Deep Community Engagement</h3>
-                    <p class="text-gray-600">Forge meaningful connections with over 2,500 households and establish your brand as a supportive pillar of the community.</p>
-                </div>
-                <div class="card">
-                    <div class="flex justify-center mb-4">
-                        <span class="text-5xl text-red-500">❤️</span>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 text-red-600">Enhance Corporate Image</h3>
-                    <p class="text-gray-600">Demonstrate strong corporate social responsibility by supporting a significant cultural and spiritual gathering, enhancing your brand's reputation.</p>
+                <div class="card text-left">
+                    <h3 class="text-2xl font-bold mb-3 text-amber-600">Other Community Events</h3>
+                    <p class="text-gray-700 mb-4">
+                        Beyond Ratha Yatra, we regularly host various spiritual gatherings and cultural programs to engage and inspire our community.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 space-y-1">
+                        <li>Monthly Satsangs & Discourses</li>
+                        <li>Bhagavad-Gita Study Circles</li>
+                        <li>Festivals (Janmashtami, Diwali etc.)</li>
+                        <li>Children's Cultural Workshops</li>
+                        <li>Community Seva Drives</li>
+                    </ul>
+                    <p class="text-gray-600 mt-6 italic">Stay tuned to our social media for announcements on upcoming events!</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sponsorship-tiers" class="py-16 text-center">
+    <section id="sponsorship-page" class="page-section text-center">
         <div class="container mx-auto px-6">
-            <h2 class="section-title">Choose Your Impact Level</h2>
+            <h2 class="section-title">Sponsorship Opportunities: Ratha Yatra 2025</h2>
             <p class="section-subtitle">
-                We offer four distinct sponsorship packages, meticulously designed to provide varying levels of exposure and engagement, ensuring a perfect fit for your brand's goals and budget.
+                Partner with us to amplify your brand's reach and connect with a vibrant, engaged community.
             </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+                <a href="#sponsorship-tiers" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                    Explore Sponsorship Tiers
+                </a>
+                <button onclick="window.spotlightSection('sponsorship-tiers')" class="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-lg text-lg transition duration-300">
+                    Spotlight Tiers!
+                </button>
+            </div>
+
             <div class="card md:col-span-2">
                  <h3 class="text-xl font-bold mb-4 text-center text-red-600">Sponsorship Investment Levels</h3>
                 <div class="chart-container mx-auto h-72 md:h-96">
@@ -256,7 +368,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
                 <div class="card flex flex-col border-t-4 border-red-600">
                     <h3 class="text-2xl font-bold mb-3 text-red-600">💎 Diamond</h3>
-                    <p class="text-3xl font-bold mb-4 text-gray-800">₹1.5 Lakh</p>
+                    <p class="text-3xl font-bold mb-4 text-gray-800">₹1 Lakh</p>
                     <ul class="space-y-2 text-gray-700 text-left mb-6 flex-grow">
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Premier 10x12ft Banner</li>
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Digital Screen Feature</li>
@@ -274,7 +386,7 @@
 
                 <div class="card flex flex-col border-t-4 border-amber-500">
                     <h3 class="text-2xl font-bold mb-3 text-amber-500">🌟 Gold</h3>
-                    <p class="text-3xl font-bold mb-4 text-gray-800">₹1.25 Lakh</p>
+                    <p class="text-3xl font-bold mb-4 text-gray-800">₹75,000</p>
                     <ul class="space-y-2 text-gray-700 text-left mb-6 flex-grow">
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Prominent 8x10ft Banner</li>
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Invites & Pamphlets (2500+ homes)</li>
@@ -290,7 +402,7 @@
 
                 <div class="card flex flex-col border-t-4 border-emerald-500">
                     <h3 class="text-2xl font-bold mb-3 text-emerald-500">🥈 Silver</h3>
-                    <p class="text-3xl font-bold mb-4 text-gray-800">₹1 Lakh</p>
+                    <p class="text-3xl font-bold mb-4 text-gray-800">₹50,000</p>
                     <ul class="space-y-2 text-gray-700 text-left mb-6 flex-grow">
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Visible 6x8ft Banner</li>
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Invites & Pamphlets (2500+ homes)</li>
@@ -304,7 +416,7 @@
                 </div>
 
                 <div class="card flex flex-col border-t-4 border-sky-500"> <h3 class="text-2xl font-bold mb-3 text-sky-500">🥉 Bronze</h3>
-                    <p class="text-3xl font-bold mb-4 text-gray-800">₹75,000</p>
+                    <p class="text-3xl font-bold mb-4 text-gray-800">₹25,000</p>
                     <ul class="space-y-2 text-gray-700 text-left mb-6 flex-grow">
                         <li class="benefit-item"><span class="benefit-icon">✓</span>4x4ft Banner Display</li>
                         <li class="benefit-item"><span class="benefit-icon">✓</span>Invites & Pamphlets (2500+ homes)</li>
@@ -314,27 +426,19 @@
                     <a href="#cta" class="mt-auto bg-sky-500 hover:bg-sky-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 block text-center">Become Bronze Sponsor</a>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <section id="visualized-benefits" class="py-16 bg-gray-100 text-center">
-        <div class="container mx-auto px-6">
-            <h2 class="section-title">Key Sponsorship Benefits at a Glance</h2>
-            <p class="section-subtitle">
-                Visualize the tangible benefits your brand receives. We ensure maximum exposure and value for your generous contribution.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                 <div class="card">
                     <h3 class="text-xl font-bold mb-4 text-red-600">Advertising Banner Prominence</h3>
                     <div class="chart-container">
-                        <canvas id="bannerSizeChart"></canvas>
+                        <canvas id="sponsorshipBannerSizeChart"></canvas>
                     </div>
                     <p class="text-sm text-gray-600 mt-4">Comparison of banner sizes offered across different sponsorship tiers, illustrating the scale of physical brand presence.</p>
                 </div>
                 <div class="card">
                     <h3 class="text-xl font-bold mb-4 text-amber-600">Digital & Community Reach</h3>
                      <div class="chart-container">
-                        <canvas id="digitalReachChart"></canvas>
+                        <canvas id="sponsorshipDigitalReachChart"></canvas>
                     </div>
                     <p class="text-sm text-gray-600 mt-4">Illustrates the extent of digital promotions, including community app announcements and social media collaborations, across sponsorship tiers.</p>
                 </div>
@@ -357,23 +461,29 @@
                 </div>
                 <p class="text-sm text-gray-600 mt-6 text-center">Your sponsorship directly contributes to the successful and vibrant execution of every aspect of the Ratha Yatra, enhancing the experience for thousands of devotees.</p>
             </div>
-        </div>
+            </div>
     </section>
 
-
-    <section id="cta" class="py-20 text-center bg-gradient-to-br from-red-600 to-amber-600 text-white">
+    <section id="contact-us-page" class="page-section text-center bg-gray-100">
         <div class="container mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Make an Impact?</h2>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-                Partner with Utopia Jagannath Sevak Sangha for Ratha Yatra 2025. Let's create a divine and memorable celebration together.
+            <h2 class="section-title">Connect With Us</h2>
+            <p class="section-subtitle">
+                We'd love to hear from you! Whether you have questions about our events, want to volunteer, or are interested in sponsorship, please reach out.
             </p>
             <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl max-w-lg mx-auto">
-                <h3 class="text-2xl font-bold mb-4 text-red-600">Contact Us for Sponsorship</h3>
+                <h3 class="text-2xl font-bold mb-4 text-red-600">Utopia Jagannath Sevak Sangha</h3>
                 <p class="mb-2"><span class="font-semibold">Organization:</span> Utopia Jagannath Sevak Sangha</p>
-                <p class="mb-2"><span class="font-semibold">Contact Person:</span> [Your Name / Team Name]</p>
-                <p class="mb-2"><span class="font-semibold">Phone:</span> <a href="tel:+910000000000" class="text-amber-600 hover:underline">[Your Contact Number]</a></p>
-                <p class="mb-4"><span class="font-semibold">Email:</span> <a href="mailto:sponsorship@example.com" class="text-amber-600 hover:underline">[Your Email Address]</a></p>
-                <button onclick="copyContactInfo()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
+                <p class="mb-2"><span class="font-semibold">Contact Person:</span> Jagannth Sangha Team</p>
+                <p class="mb-2"><span class="font-semibold">Phone:</span> <a href="tel:+919739973156" class="text-amber-600 hover:underline">+91 9739973156</a></p>
+                <p class="mb-4"><span class="font-semibold">Email:</span> <a href="mailto:utopiajagannathsevaksangha@gmail.com" class="text-amber-600 hover:underline">utopiajagannathsevaksangha@gmail.com</a></p>
+                
+                <div class="my-6">
+                    <h4 class="text-xl font-bold mb-3 text-emerald-600">Scan to Contribute!</h4>
+                    <img src="scanner.jpeg" alt="Payment QR Code" class="mx-auto w-48 h-auto rounded-lg shadow-md border-2 border-gray-200 p-2">
+                    <p class="text-sm text-gray-600 mt-2">Scan this QR code with your preferred payment app to make a direct contribution.</p>
+                </div>
+
+                <button onclick="window.copyContactInfo()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 w-full">
                     Copy Contact Info
                 </button>
                 <p id="copyMessage" class="text-sm mt-3 text-emerald-700"></p>
@@ -383,187 +493,302 @@
 
     <footer class="text-center py-8 bg-gray-800 text-gray-300">
         <p>&copy; 2025 Utopia Jagannath Sevak Sangha. All Rights Reserved.</p>
-        <p>Designed to connect and celebrate.</p>
+        <p>Designed with devotion.</p>
     </footer>
 
 <script>
-    function wrapLabels(label, maxWidth) {
-        if (typeof label !== 'string') return label;
-        const words = label.split(' ');
-        let currentLine = '';
-        const lines = [];
-        words.forEach(word => {
-            if ((currentLine + ' ' + word).length > maxWidth && currentLine.length > 0) {
-                lines.push(currentLine);
-                currentLine = word;
+    document.addEventListener('DOMContentLoaded', function() {
+        // Function to show a specific page and update active nav link
+        window.showPage = function(pageId, clickedButton) { // Exposed to global scope
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            const targetSection = document.getElementById(pageId);
+            if (targetSection) { // Check if target section exists before adding class
+                targetSection.classList.add('active');
             } else {
-                currentLine = currentLine.length === 0 ? word : currentLine + ' ' + word;
+                console.error(`Section with ID '${pageId}' not found.`);
+                // Optionally, redirect to home or handle error gracefully
+                return;
             }
-        });
-        lines.push(currentLine);
-        return lines;
-    }
 
-    const tooltipTitleCallback = {
-        plugins: {
-            tooltip: {
-                callbacks: {
-                    title: function(tooltipItems) {
-                        const item = tooltipItems[0];
-                        let label = item.chart.data.labels[item.dataIndex];
-                        if (Array.isArray(label)) {
-                            return label.join(' ');
-                        } else {
-                            return label;
+            const navLinks = document.querySelectorAll('#navbar .nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Find the corresponding nav link and activate it
+                const linkText = link.textContent.toLowerCase();
+                let linkPageId;
+                if (linkText === 'home') linkPageId = 'home-page';
+                else if (linkText === 'about us') linkPageId = 'about-us-page';
+                else if (linkText === 'events') linkPageId = 'events-page';
+                else if (linkText === 'sponsorship') linkPageId = 'sponsorship-page';
+                else if (linkText === 'contact us') linkPageId = 'contact-us-page';
+
+                if (linkPageId === pageId) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Scroll to top of the page when changing sections
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+            if (pageId === 'sponsorship-page') {
+                initializeCharts(); // Initialize charts only when sponsorship page is shown
+            }
+        };
+
+        // Initialize charts (only if on sponsorship page, or when it becomes active)
+        // To ensure charts render correctly, we'll initialize them only once
+        let chartsInitialized = false;
+
+        function initializeCharts() {
+            if (chartsInitialized) return; // Prevent re-initialization
+
+            // Helper function to wrap labels for Chart.js
+            function wrapLabels(label, maxWidth) {
+                if (typeof label !== 'string') return label;
+                const words = label.split(' ');
+                let currentLine = '';
+                const lines = [];
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).length > maxWidth && currentLine.length > 0) {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    } else {
+                        currentLine = currentLine.length === 0 ? word : currentLine + ' ' + word;
+                    }
+                });
+                lines.push(currentLine);
+                return lines;
+            }
+
+            // Standard Tooltip Configuration for Chart.js
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
                         }
                     }
                 }
-            }
-        }
-    };
+            };
 
-    const sponsorshipInvestmentCtx = document.getElementById('sponsorshipInvestmentChart').getContext('2d');
-    new Chart(sponsorshipInvestmentCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Bronze', 'Silver', 'Gold', 'Diamond'].map(label => wrapLabels(label, 16)),
-            datasets: [{
-                label: 'Investment (INR Lakhs)',
-                data: [0.75, 1.00, 1.25, 1.50],
-                backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
-                borderColor: ['#0284C7', '#059669', '#D97706', '#DC2626'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: { display: true, text: 'Investment (in Lakhs INR)' }
-                }
-            },
-            ...tooltipTitleCallback
-        }
-    });
-
-    const bannerSizeCtx = document.getElementById('bannerSizeChart').getContext('2d');
-    new Chart(bannerSizeCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Bronze (4x4 ft)', 'Silver (6x8 ft)', 'Gold (8x10 ft)', 'Diamond (10x12 ft)'].map(label => wrapLabels(label, 16)),
-            datasets: [{
-                label: 'Approx. Banner Area (sq ft)',
-                data: [16, 48, 80, 120],
-                backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
-                borderColor: ['#0284C7', '#059669', '#D97706', '#DC2626'],
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-                y: {
-                    beginAtZero: true,
-                    title: { display: true, text: 'Approx. Banner Area (sq ft)' }
-                }
-            },
-             ...tooltipTitleCallback
-        }
-    });
-
-    const digitalReachCtx = document.getElementById('digitalReachChart').getContext('2d');
-    new Chart(digitalReachCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Bronze Features', 'Silver Adds', 'Gold Adds', 'Diamond Exclusive'].map(label => wrapLabels(label, 16)),
-            datasets: [{
-                label: 'Digital & Community Feature Scope',
-                data: [3, 3, 2, 2],
-                backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
-                hoverOffset: 4
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: { position: 'top' },
-                title: { display: true, text: 'Scope of Digital & Community Benefits by Tier' },
-                 tooltip: {
-                    callbacks: {
-                        title: function(tooltipItems) {
-                            const item = tooltipItems[0];
-                            let label = item.chart.data.labels[item.dataIndex];
-                            if (Array.isArray(label)) { return label.join(' '); }
-                            return label;
+            const sponsorshipInvestmentCtx = document.getElementById('sponsorshipInvestmentChart');
+            if (sponsorshipInvestmentCtx) { // Check if canvas exists
+                new Chart(sponsorshipInvestmentCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Bronze', 'Silver', 'Gold', 'Diamond'].map(label => wrapLabels(label, 16)),
+                        datasets: [{
+                            label: 'Investment (INR Lakhs)',
+                            data: [0.25, 0.50, 0.75, 1.00], // Updated data for 25k, 50k, 75k, 1 lakh
+                            backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
+                            borderColor: ['#0284C7', '#059669', '#D97706', '#DC2626'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Investment (in Lakhs INR)' }
+                            }
                         },
-                        label: function(context) {
-                            let label = context.dataset.label || '';
-                            if (label) { label += ': '; }
-                            if (context.parsed !== null) { label += context.parsed + ' key features'; }
-                            return label;
-                        }
+                        ...tooltipTitleCallback
                     }
-                }
-            }
-        }
-    });
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth'
                 });
             }
-        });
-    });
 
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('#navbar a.nav-link');
-
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) {
-                current = section.getAttribute('id');
+            const bannerSizeCtx = document.getElementById('sponsorshipBannerSizeChart'); // Changed ID to avoid conflict if other charts were added
+            if (bannerSizeCtx) { // Check if canvas exists
+                new Chart(bannerSizeCtx.getContext('2d'), {
+                    type: 'bar',
+                    data: {
+                        labels: ['Bronze (4x4 ft)', 'Silver (6x8 ft)', 'Gold (8x10 ft)', 'Diamond (10x12 ft)'].map(label => wrapLabels(label, 16)),
+                        datasets: [{
+                            label: 'Approx. Banner Area (sq ft)',
+                            data: [16, 48, 80, 120],
+                            backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
+                            borderColor: ['#0284C7', '#059669', '#D97706', '#DC2626'],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Approx. Banner Area (sq ft)' }
+                            }
+                        },
+                        ...tooltipTitleCallback
+                    }
+                });
             }
-        });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
+            const digitalReachCtx = document.getElementById('sponsorshipDigitalReachChart'); // Changed ID
+            if (digitalReachCtx) { // Check if canvas exists
+                new Chart(digitalReachCtx.getContext('2d'), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Bronze Features', 'Silver Adds', 'Gold Adds', 'Diamond Exclusive'].map(label => wrapLabels(label, 16)),
+                        datasets: [{
+                            label: 'Digital & Community Feature Scope',
+                            data: [3, 3, 2, 2],
+                            backgroundColor: ['#0EA5E9', '#10B981', '#F59E0B', '#EF4444'],
+                            hoverOffset: 4
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { position: 'top' },
+                            title: { display: true, text: 'Scope of Digital & Community Benefits by Tier' },
+                            tooltip: {
+                                callbacks: {
+                                    title: function(tooltipItems) {
+                                        const item = tooltipItems[0];
+                                        let label = item.chart.data.labels[item.dataIndex];
+                                        if (Array.isArray(label)) { return label.join(' '); }
+                                        return label;
+                                    },
+                                    label: function(context) {
+                                        let label = context.dataset.label || '';
+                                        if (label) { label += ': '; }
+                                        if (context.parsed !== null) { label += context.parsed + ' key features'; }
+                                        return label;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
             }
-        });
-    });
-    
-    function copyContactInfo() {
-        const contactText = `Organization: Utopia Jagannath Sevak Sangha\nContact Person: [Your Name / Team Name]\nPhone: [Your Contact Number]\nEmail: [Your Email Address]`;
-        const textArea = document.createElement('textarea');
-        textArea.value = contactText;
-        document.body.appendChild(textArea);
-        textArea.select();
-        try {
-            document.execCommand('copy');
-            document.getElementById('copyMessage').textContent = 'Contact info copied to clipboard!';
-        } catch (err) {
-            document.getElementById('copyMessage').textContent = 'Failed to copy. Please copy manually.';
-            console.error('Fallback: Oops, unable to copy', err);
+            chartsInitialized = true;
         }
-        document.body.removeChild(textArea);
-        setTimeout(() => {
-            document.getElementById('copyMessage').textContent = '';
-        }, 3000);
-    }
 
+        // Initial page load
+        // Check if there's a hash in the URL (e.g., #sponsorship-page)
+        const initialPageId = window.location.hash ? window.location.hash.substring(1) : 'home-page';
+        let initialButton = null;
+        document.querySelectorAll('#navbar .nav-link').forEach(button => {
+            const buttonText = button.textContent.toLowerCase();
+            let buttonPageId;
+            if (buttonText === 'home') buttonPageId = 'home-page';
+            else if (buttonText === 'about us') buttonPageId = 'about-us-page';
+            else if (buttonText === 'events') buttonPageId = 'events-page';
+            else if (buttonText === 'sponsorship') buttonPageId = 'sponsorship-page';
+            else if (buttonText === 'contact us') buttonPageId = 'contact-us-page';
+
+            if (buttonPageId === initialPageId) {
+                initialButton = button;
+            }
+        });
+        window.showPage(initialPageId, initialButton);
+
+
+        // Attach click listeners to nav buttons
+        document.querySelectorAll('#navbar .nav-link').forEach(button => {
+            button.addEventListener('click', function() {
+                const pageId = this.textContent.toLowerCase().replace(/\s/g, '-') + '-page';
+                window.showPage(pageId, this);
+            });
+        });
+
+        // Smooth scroll for internal links (like "Explore Sponsorship Tiers")
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') && href !== '#') { // Only handle internal fragment links, exclude just '#'
+                    e.preventDefault();
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // If clicking an internal link within the current section (e.g., on sponsorship page),
+                        // just scroll. If it's a link to another section, show that section first.
+                        const currentActiveSection = document.querySelector('.page-section.active');
+                        const targetSectionParent = targetElement.closest('.page-section');
+
+                        if (currentActiveSection && targetSectionParent && currentActiveSection.id !== targetSectionParent.id) {
+                            // If the link is to a different main page section, switch page first
+                            window.showPage(targetSectionParent.id, document.querySelector(`#navbar button[onclick*="${targetSectionParent.id}"]`));
+                            // Then scroll to the specific element within that page after a short delay
+                            setTimeout(() => {
+                                targetElement.scrollIntoView({
+                                    behavior: 'smooth'
+                                });
+                            }, 100); // Small delay to allow page switch animation/display
+                        } else {
+                            // Otherwise, just scroll within the current active page
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+
+        // Copy contact info function
+        window.copyContactInfo = function() {
+            const contactText = `Organization: Utopia Jagannath Sevak Sangha\nContact Person: Jagannth Sangha Team\nPhone: +91 9739973156\nEmail: utopiajagannathsevaksangha@gmail.com`;
+            const textArea = document.createElement('textarea');
+            textArea.value = contactText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                document.getElementById('copyMessage').textContent = 'Contact info copied to clipboard!';
+            } catch (err) {
+                document.getElementById('copyMessage').textContent = 'Failed to copy. Please copy manually.';
+                console.error('Fallback: Oops, unable to copy', err);
+            }
+            document.body.removeChild(textArea);
+            setTimeout(() => {
+                document.getElementById('copyMessage').textContent = '';
+            }, 3000);
+        };
+
+        // Dynamic highlight function
+        window.spotlightSection = function(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add('highlight-animation');
+                setTimeout(() => {
+                    section.classList.remove('highlight-animation');
+                }, 2000); // Animation duration
+            }
+        };
+
+        // Image carousel logic
+        const carouselImages = document.querySelectorAll('.image-carousel img');
+        let currentImageIndex = 0;
+
+        function showNextImage() {
+            carouselImages[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % carouselImages.length;
+            carouselImages[currentImageIndex].classList.add('active');
+        }
+
+        // Start carousel only if images exist
+        if (carouselImages.length > 0) {
+            carouselImages[0].classList.add('active'); // Ensure first image is active on load
+            setInterval(showNextImage, 4000); // Change image every 4 seconds
+        }
+    });
 </script>
 </body>
 </html>
