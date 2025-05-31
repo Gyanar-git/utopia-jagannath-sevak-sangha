@@ -3,25 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Utopia Jagannath Sevak Sangha</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Utopia Jagannath Sevak Sangha - Official Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-50">
-    <!-- Header Section -->
-    <header class="bg-white shadow-lg fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-6 py-3">
-            <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold text-orange-600">UJSS</div>
-                <div class="hidden md:flex space-x-8">
-                    <a href="#home" class="text-gray-700 hover:text-orange-600">Home</a>
-                    <a href="#about" class="text-gray-700 hover:text-orange-600">About</a>
-                    <a href="#gallery" class="text-gray-700 hover:text-orange-600">Gallery</a>
-                    <a href="#contact" class="text-gray-700 hover:text-orange-600">Contact</a>
-                </div>
-            </div>
-        </nav>
-    </header>
+<body class="text-gray-800">
+    <div class="text-watermark">Utopia Jagannath Sevak Sangha</div>
+
+    <img src="top-left-corner.jpeg" alt="Utopia Jagannath Sevak Sangha Logo" class="corner-logo top-left">
+    <img src="bottom-right.jpeg" alt="Jagannath Sevak Sangha" class="corner-logo bottom-right">
+
+    <nav id="navbar" class="sticky-nav">
+        <div class="container mx-auto px-6 py-2 flex justify-center space-x-2 md:space-x-4">
+            <button class="nav-link" onclick="window.showPage('home-page', this)">Home</button>
+            <button class="nav-link" onclick="window.showPage('about-us-page', this)">About Us</button>
+            <button class="nav-link" onclick="window.showPage('events-page', this)">Events</button>
+            <button class="nav-link" onclick="window.showPage('sponsorship-page', this)">Sponsorship</button>
+            <button class="nav-link" onclick="window.showPage('contact-us-page', this)">Contact Us</button>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section id="home" class="pt-20">
